@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        td {
+            width: 161px;
+        }
+
+        #main {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="get" id="form">
+        <label>Name: <input type="text" name="name" id="user-name"><br></label>
+        <label>occupation: <input type="text" name="occupation" id="user-occupation"><br></label>
+        <label>sairly: <input type="number" name="sairly" id="user-sairly"><br></label>
+    </form>
+    <input type="button" value="add" onclick="addData()">
+    <div id="parentDiv"></div>
+
+    <!-- <button type="submit" onclick="objIntable()">
+        click here
+    </button>
+    <br/>
+</tr>-->
+
+    <div id="main">
+        <table>
+            <tr id="pk">
+                <!-- <td>s.no</td> -->
+                <td>name</td>
+                <td>occupation</td>
+                <td>sairly</td>
+                <td></td>
+            </tr>
+        </table>
+        <div id="parentdiv">
+
+        </div>
+    </div>
+    <script>
+        function addData() {
+            var name = document.getElementById('user-name').value;
+            var occupation = document.getElementById('user-occupation').value;
+            var sairly = document.getElementById('user-sairly').value
+            var obj = {
+                name: name,
+                occupation: occupation,
+                sairly: sairly,
+            }
+
+            var parentDiv = document.getElementById('parentdiv');
+            var table = document.createElement('table');
+            var row = document.createElement('tr');
+            row.setAttribute("class", "pk")
+            var td2 = document.createElement("td")
+            td2.innerHTML = obj.name
+           
+
+            var td3 = document.createElement("td")
+            td3.innerHTML = obj.occupation
+            var td4 = document.createElement("td")
+            td4.innerHTML = obj.sairly;
+            // var td5 = document.createElement("td");
+            // var button = document.createElement("button");
+            
+                // var b = td3.innerHTML = null
+                // var c = td4.innerHTML = null
+                // var inputName = document.createElement("input");
+                // inputName.type = "text";
+                // inputName.value = td2.innerHTML
+                // td2.appendChild(inputName)            
+            // button.type = "button";
+            // button.innerHTML = "edit";
+
+            var td6 = document.createElement("td");
+            var button1 = document.createElement("button");
+            button1.type = "button";
+            button1.innerHTML = "delet";
+            button1.onclick = function () {
+                row.innerHTML = null
+                // td3.innerHTML = null
+                // td4.innerHTML = null
+
+            }
+
+            row.appendChild(td2);
+           
+            row.appendChild(td3);
+            row.appendChild(td4);
+            // row.appendChild(td5);
+            // td5.appendChild(button)
+            row.appendChild(td6);
+            td6.appendChild(button1);
+            // table.appendChild(row1);
+            table.appendChild(row);
+            parentDiv.appendChild(table);
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // function objIntable() {
+        //     var obj = [
+        //         {
+        //             name: "ukasha",
+        //             occupation: "service",
+        //             sairly: 10000.
+        //         },
+        //         {
+        //             name: "ukasha",
+        //             occupation: "service",
+        //             sairly: 10000.
+        //         },
+        //         {
+        //             name: "ukasha",
+        //             occupation: "service",
+        //             sairly: 10000.
+        //         },
+        //         {
+        //             name: "ukasha",
+        //             occupation: "service",
+        //             sairly: 10000.
+        //         },
+        //     ]
+        //     var parentDiv = document.getElementById('parentdiv');
+
+        //     var elTable = document.createElement("table");
+        //     elTable.setAttribute("border" , "1")
+        //     var elTableBody = document.createElement("tbody");
+        //     for (i = 0; i < obj.length; i++) {
+        //         var elTableRow = document.createElement("tr");
+        //         var elTableDataKey = document.createElement("td");
+        //         elTableDataKey.innerHTML = obj[i].name;
+        //         var elTableDataValue = document.createElement("td");
+        //         elTableDataValue.innerHTML = obj[i].occupation;
+        //         elTableDataValue1 = document.createElement("td");
+        //         elTableDataValue1.innerHTML = obj[i].sairly;
+        //         elTableRow.appendChild(elTableDataKey);
+        //         elTableRow.appendChild(elTableDataValue);
+        //         elTableRow.appendChild(elTableDataValue1);
+
+        //         elTableBody.appendChild(elTableRow);
+
+        //     }
+        //     elTable.appendChild(elTableBody);
+        //     parentDiv.append(elTable);
+        // }
+
+    </script>
+</body>
+
+</html>
